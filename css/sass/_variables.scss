@@ -1,0 +1,22 @@
+
+$font-stack:"'Kumbh Sans','poppins',Georgia,sans-serif";
+$font-size: 16px !default;
+$font-size-xs: $font-size * 0.5;
+$font-size-sm: $font-size * 0.75;
+$font-size-md: $font-size * 1.25;
+$font-size-lg: $font-size * 1.75;
+$font-size-xl: $font-size * 2.25;
+$font-size-xxl: $font-size * 3;
+$base-padding: .5rem;
+$base-margin: .75rem;
+//primaries
+$primary: hsl(26,100%,55%);
+$secondary: hsl(25,100%,94%);
+//neutrals
+$dark-blue: hsl(220,13%,13%);
+$grayish-blue: hsl(220,14%,75%);
+$dark-grayish-blue: hsl(219,9%,45%);
+$light-grayish-blue:hsl(223, 64%, 98%);
+$white: hsl(0,0%,100%);
+$black: hsl(0,0%,0%);
+$light: #eaeaea;

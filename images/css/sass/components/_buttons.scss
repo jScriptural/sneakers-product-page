@@ -1,0 +1,44 @@
+@use "sass:color";
+$shadow: color.adjust(#777,$lightness: 35%);
+@mixin button ($border-color: $grayish-blue) {
+	text-align: center;
+	border-radius: 7px;
+	border: 1px solid $border-color;
+  padding: $base-padding*1.4 $base-padding*2.4;
+}
+button {
+	background-color: transparent;
+}
+.btn {
+ @include button;
+ width: fit-content;
+ background: $grayish-blue;
+ 
+}
+
+
+@each $key,$val in $colors {
+	.btn-#{$key} {
+		background: $val;
+		border-color: $val;
+		box-shadow: 0px 3px 1px $shadow,
+		 inset -0px 0px 1px color.adjust($shadow,$lightness: 80%),
+		 1px -1px 1px color.adjust($shadow,$lightness: 10%);
+		 &:hover{
+		 	background: color.mix(#fff,$val,20%);
+		 }
+	}
+	.btn-outline-#{$key} {
+		@include button($val);
+		width: fit-content;
+		&:hover {
+			background: $val;
+			color: $white;
+		}
+	}
+}
+
+.btn-full {
+	width: 100%;
+//	padding: $base-padding*1.4  $base-padding*2.4;
+}

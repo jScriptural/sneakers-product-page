@@ -1,0 +1,33 @@
+
+html {
+	font-family: #{$font-stack};
+	box-sizing: border-box;
+	font-size: $font-size;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 100vw;
+	min-height: 100vh;
+	overflow-x: scroll;
+}
+
+img {
+	width: 100%;
+}
+
+p {
+	margin: $base-margin;
+	padding: $base-padding;
+}
+
+a {
+	text-decoration: none;
+}

@@ -1,0 +1,154 @@
+@use "sass:math";
+$columns: 12;
+$grid-gap: 5px;
+$grid-gaps: (
+"0": 0,
+"1": $grid-gap,
+"2": $grid-gap * 2,
+"3": $grid-gap * 3,
+"4": $grid-gap * 4,
+"5": $grid-gap * 5,
+"6": $grid-gap * 6,
+"7": $grid-gap * 7,
+"8": $grid-gap * 8,
+"9": $grid-gap * 9,
+"10": $grid-gap * 10,
+);
+$content-justification: (
+"center": center,
+"start": flex-start,
+"end": flex-end,
+"between": space-between,
+"around": space-around,
+"even": space-evenly,
+);
+$align-items: (
+"center": center,
+"start": flex-start,
+"end": flex-end,
+"between": space-between,
+"around": space-around,
+"stretch": stretch,
+"base-line": baseline,
+);
+.container-full {
+	width: 100%;
+}
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 $base-padding;
+}
+	@include sm {
+		.container {
+			max-width: 100%;
+		}
+	}
+
+@include md {
+	.container {
+		max-width: 720px;
+	}
+}
+
+	@include lg {
+		.container {
+			max-width: 960px;
+		}
+	}
+
+	@include xl {
+		.container {
+			max-width: 1140;
+		}
+	}
+
+	@include xxl {
+		.container {
+			max-width: 1320px;
+		}
+	}
+
+.row {
+	display: flex;
+	flex-flow: row wrap;
+}
+@each $key, $val in $grid-gaps {
+	.g-#{$key} > * {
+			padding: $val;
+	}
+	.g-#{$key} >*{
+		margin-left: -$val;
+		margin-right: -$val;
+	}
+}
+@each $key,$val in $content-justification {
+	.justify-#{$key} {
+		justify-content: $val;
+	}
+}
+@each $key,$val in $align-items {
+	.align-#{$key} {
+		align-items: $val;
+	}
+}
+
+
+@include xs {
+	@for $i from 1 through $columns {
+			.col-xs-#{$i} {
+				flex-grow: 0;
+				width: math.div(100% * $i,$columns);
+				
+			}
+	}
+}
+@include sm {
+	@for $i from 1 through $columns {
+			.col-sm-#{$i} {
+				flex-grow: 0;
+				width: math.div(100% * $i,$columns);
+				
+			}
+	}
+}
+
+@include md {
+	@for $i from 1 through $columns {
+			.col-md-#{$i} {
+				flex-grow: 0;
+				width: math.div(100% * $i,$columns);
+				
+			}
+	}
+}
+
+@include  lg {
+	@for $i from 1 through $columns {
+			.col-lg-#{$i} {
+				flex-grow: 0;
+				width: math.div(100% * $i,$columns);
+				
+			}
+	}
+}
+
+
+@include xl {
+	@for $i from 1 through $columns {
+			.col-xl-#{$i} {
+				flex-grow: 0;
+				width: math.div(100% * $i,$columns);
+				
+			}
+	}
+}
+@include xxl {
+	@for $i from 1 through $columns {
+			.col-xxl-#{$i} {
+				flex-grow: 0;
+				width: math.div(100% * $i,$columns);
+				
+			}
+	}
+}

@@ -1,0 +1,264 @@
+@use "sass:math";
+%flex-layout {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar {
+	@extend %flex-layout;
+	a {
+		text-decoration: none;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+	.container-full {
+		@extend %flex-layout;
+	}
+	.navbar-items {
+		//box-sizing: border-box;
+		@extend %flex-layout;
+	  justify-content: flex-end;
+	 // border:1px solid red;
+	  .nav-item {
+	  	//border:1px solid blue;
+	  	transition: all .5s;
+	  	position: relative;
+	  	//background: $grayish-blue;
+	  	display: flex;
+	  	justify-content: flex-start;
+	    margin: 0  $base-margin;
+	    &:hover{
+	    	font-size: $font-size * 1.1;
+	    }
+	    .notification {
+	    	position: absolute;
+	    	padding: 4px;
+	    	left: 16px;
+	    	top: -11px;
+	    }
+	  	//&:last-child {
+	  	//	margin: 0;
+	  		
+	  	//}
+	  }
+	
+	}
+	.site-title {
+		margin: $base-margin;
+		padding: $base-padding;
+	}
+	.navbar-toggler-icon {
+		box-sizing: border-box;
+		border: none;
+		background: transparent;
+		margin: math.div($base-margin,2);
+	}
+	.collapse {
+		
+		display: none;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 100000;
+	  width: 70%;
+	  min-height: 100vh;
+	  ul li {
+	  	margin: 0;
+	  	padding: $base-padding;
+	  //	ul:li:last-child {
+	  	//	margin: 0 $base-margin;
+	  //	}
+	  }
+	}
+
+}
+
+
+
+
+.navbar-expand-sm {
+	@include sm {
+		.collapse {
+			display: flex;
+			position: static;
+			min-height: 100%;
+			background: transparent;
+			.close-icon {
+				display: none;
+			}
+			ul {
+				padding: $base-padding;
+			  margin: 0 $base-margin*1.5;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+		}
+		.navbar-toggler-icon {
+			display: none;
+		}
+		.active {
+			color: $black;
+		}
+		.active::before {
+			content: "";
+			border: 1px solid $primary;
+			width: 50%;
+		}
+		
+	}
+}
+
+.navbar-expand-md {
+	@include md {
+		.collapse {
+			display: flex;
+			position: static;
+			min-height: 100%;
+			background: transparent;
+			.close-icon {
+				display: none;
+			}
+			ul {
+				padding: $base-padding;
+			  margin: 0 $base-margin*1.5;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+		}
+		.navbar-toggler-icon {
+			display: none;
+		}
+		.active {
+			color: $black;
+		}
+		.active::before {
+			content: "";
+			border: 1px solid $primary;
+			position: absolute;
+			bottom: 0;
+			width: 50%;
+			left: 25%;
+		}
+		
+	}
+}
+
+.navbar-expand-lg {
+	@include lg {
+		.collapse {
+			display: flex;
+			position: static;
+			min-height: 100%;
+			background: transparent;
+			.close-icon {
+				display: none;
+				background: transparent;
+			}
+			ul {
+				padding: $base-padding;
+			  margin: 0 $base-margin*1.5;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+		}
+		.nav-link {
+			color: $grayish-blue;
+		}
+		.active {
+			color: $black;
+		}
+		.navbar-toggler-icon {
+			display: none;
+		}
+		
+		.active::before {
+			content: "";
+			border: 1px solid $primary;
+			position: absolute;
+			bottom: 0;
+			width: 50%;
+			left: 25%;
+		}
+		
+	}
+}
+
+.navbar-expand-xl {
+	@include xl {
+		.collapse {
+			display: flex;
+			position: static;
+			min-height: 100%;
+			background: transparent;
+			.close-icon {
+				display: none;
+			}
+			ul {
+				padding: $base-padding;
+			  margin: 0 $base-margin*1.5;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+		}
+		.navbar-toggler-icon {
+			display: none;
+		}
+		.active {
+			color: $black;
+		}
+		.active::before {
+			content: "";
+			border: 1px solid $primary;
+			position: absolute;
+			bottom: 0;
+			width: 50%;
+			left: 25%;
+		}
+		
+	}
+}
+
+.navbar-expand-xxl {
+	@include xxl {
+		.collapse {
+			display: flex;
+			position: static;
+			min-height: 100%;
+			background: transparent;
+			.close-icon {
+				display: none;
+			}
+			ul {
+				padding: $base-padding;
+			  margin: 0 $base-margin*1.5;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+		}
+		.navbar-toggler-icon {
+			display: none;
+		}
+		.active {
+			color: $black;
+		}
+		.active::before {
+			content: "";
+			border: 1px solid $primary;
+			position: absolute;
+			bottom: 0;
+			width: 50%;
+			left: 25%;
+		}
+		
+	}
+}
+

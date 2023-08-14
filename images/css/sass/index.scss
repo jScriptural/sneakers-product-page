@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.active {
+	font-weight: 400;
+}
+
+@import "variables";
+@import "breakpoints";
+@import "reset";
+@import "colors";
+@import "utilities";
+@import "flexgrid.scss";
+@import "animation";
+@import "components/navbar";
+@import "components/buttons";
+@import "components/carousel";
+@import "miscellaneous";
+
+$displays: "block", "inline", "inline-block", "flex", "none";
+
+@each $val in $displays {
+	.d-#{$val} {
+		display: #{$val};
+	}
+	
+	.d-xs-#{$val} {
+		@include xs {
+			display: #{$val};
+		}
+	}
+	
+	.d-sm-#{$val} {
+		@include sm {
+			display: #{$val};
+		}
+	}
+	
+	.d-md-#{$val} {
+		@include md {
+			display: #{$val};
+		}
+	}
+	
+	.d-lg-#{$val} {
+		@include lg {
+			display: #{$val};
+		}
+	}
+	
+	.d-xl-#{$val} {
+		@include xl {
+			display: #{$val};
+		}
+	}
+	
+	.d-xxl-#{$val} {
+		@include xxl {
+			display: #{$val};
+		}
+	}
+}

@@ -1,0 +1,80 @@
+@use "sass:math";
+@use "sass:color";
+.cart-container {
+	$width: 90%;
+	width: $width;
+	position: fixed;
+	min-height: 250px;
+box-shadow: 0px 3px 1px $shadow,
+		 inset -0px 0px 1px color.adjust($shadow,$lightness: 80%),
+		 0px -1px 2px $shadow;
+	left: math.div(100-$width, 2);
+  z-index: 7000;
+	@include md {
+		$width: 350px;
+		width: $width;
+		left: 53%;
+	}
+	
+	@include lg {
+		width: 400px;
+		left: 60%;
+	}
+	
+	.items-container {
+		.delete {
+			opacity: .8;
+		}
+	}
+	
+}
+
+
+#lightbox {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	padding-top: 10rem;
+	display: none;
+	justify-content: center;
+	align-items: flex-start;
+	z-index: 15000;
+	min-height: 100%;
+	background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(4px) grayscale(70%);
+	
+}
+
+#primaryCarousel {
+	pointer-events: none;
+	transition: opacity .2s;
+	@include md {
+		pointer-events: auto;
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+}
+
+.user-profile > img {
+	&:hover {
+		border: 2px solid $primary;
+		border-radius: 50%;
+	}
+}
+.product-info {
+	@include md {
+		margin-bottom: 8rem;
+	}
+}
+footer {
+	a{
+		color: hsl(228,204%,44%);
+	}
+	.year {
+		font: {
+			family: poppins;
+			size: 10px;
+		};
+	}
+}

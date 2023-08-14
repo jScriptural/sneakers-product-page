@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="robots" content="index,follow">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="stylesheet" href="css/index.css">
+	<title>Frontend Mentor | E-commerce product page</title>
+</head>
+
+<body>
+	
+	<nav class="navbar sticky-top-0 bg-white navbar-expand-md">
+		<div class="bg-white container-full border-bottom">
+			<div id="togglerIcon" class="navbar-toggler-icon w-10"><img src="./images/icon-menu.svg"></div>
+			<div class="site-title w-55"><img src="./images/logo.svg"></div>
+			<div class="navbar-items collapse bg-white">
+				<div id="closeIcon" class="close-icon w-5 my-2 ml-3 "><img src="./images/icon-close.svg"></div>
+				<ul>
+					<li class="nav-item fw-700 font-normal active"><a href="#" class="text-black nav-link">Collections</a></li>
+					<li class="text-grayish-blue nav-item fw-700 font-normal"><a href="#" class="text-black nav-link">Men</a></li>
+					<li class="nav-item fw-700 font-normal"><a href="#" class="text-black nav-link">Women</a></li>
+					<li class="nav-item fw-700 font-normal"><a href="#" class="text-black nav-link">About</a></li>
+					<li class="nav-item fw-700 font-normal"><a href="#" class="
+			  text-black nav-link">Contact</a></li>
+				</ul>
+			</div>
+			<div class="navbar-items">
+				<div class="nav-item"><span hidden class="notification text-white bg-primary
+				rounded-1  font-sm">0</span><span class="nav-link cart-icon"><img src="./images/icon-cart.svg"></span></div>
+				<div class="nav-item row justify-end align-center w-20">
+					<div class="user-profile row justify-end align-center"><img class="w-70 profile-pic" src="./images/image-avatar.png">
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div hidden class="bg-white cart-container rounded-2 my-5 border">
+		<div class=" mb-3 p-2 border-bottom  pb-5 fw-700">cart</div>
+		<div class="empty-cart-msg text-center fw-700 text-grayish-blue">Your cart is empty</div>
+		<div class="items-container p-4"></div>
+		<div hidden class="checkout mb-1 mx-auto w-80 text-white p-2  rounded-2
+		btn-primary text-center fw-700">Checkout &raquo;</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<section class="container-full">
+		<div class="container-full row justify-between align-end">
+			<div class="product-con mx-auto mt-4 col-md-6">
+				
+				<div class="mb-5 row  carousel-container">
+					<div class="carousel rounded-3 col-md-12 mb-3">
+						<div d-md-none class="controls p-3">
+							<div class="bg-hover-primary control-prev rounded-circle bg-white"><img class="w-20" src="images/icon-previous.svg">
+							</div>
+							<div class="bg-hover-primary control-next rounded-circle bg-white"><img class="w-20" src="images/icon-next.svg">
+							</div>
+						</div>
+						<div id="primaryCarousel" class="slides">
+							<div class="slide rounded-3"><img class="rounded-3" src="images/image-product-1.jpg"></div>
+							<div class="slide rounded-3"><img class="rounded-3" src="images/image-product-2.jpg"></div>
+							<div class="slide rounded"><img class="rounded-3" src="images/image-product-3.jpg"></div>
+							<div class="slide rounded-3"><img class="rounded-3" src="images/image-product-4.jpg"></div>
+						</div>
+						
+					</div>
+					
+					<div class="thumbnails col-md-12">
+						<div data-src="/images/image-product-1.jpg" class="thumbnail active-thumbnail rounded-3"><img class="rounded-3" src="images/image-product-1-thumbnail.jpg">
+						</div>
+						<div data-src="/images/image-product-2.jpg" class="thumbnail
+						rounded-3"><img class="rounded-3" src="images/image-product-2-thumbnail.jpg"></div>
+						<div data-src="/images/image-product-3.jpg" class="thumbnail rounded-3"><img class="rounded-3"	src="images/image-product-3-thumbnail.jpg">
+						</div>
+						<div data-src="/images/image-product-4.jpg" class="thumbnail rounded-3"><img class="rounded-3"	src="images/image-product-4-thumbnail.jpg">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="my-2 mx-auto product-info col-md-6">
+				<div class="mx-2">
+					<h5 class="text-primary mb-1">SNEAKER COMPANY</h5>
+					<h1>Fall Limited Edition Sneakers</h1>
+					<p class="p-0 my=0 mx-auto">These low-profile sneakers are your perfect casual wear companion.
+						Featuring a durable rubber outer sole, they'll withstand everything the
+						weather can offer.</p>
+					<div class="price-discount my-2 row align-center justify-between">
+						<div class="price row align-center justify-start fw-700 font-lg col-md-12
+						mb-1"><span class="price">$125.00</span>
+							<span class="discount text-primary
+						bg-secondary rounded-1 font-sm fw-400  fw-700 p-1 text-center ml-1">50%</span>
+						</div>
+						<del class="prev-price col-md-12 text-grayish-blue fw-700 font-md my-auto">$250.00</del>
+					</div>
+					<div class="row align-center justify-between">
+						<div class="rounded-2 bg-light-grayish-blue justify-between align-center row
+						quantity mt-1 col-xs-12 col-md-4">
+							<span class="minus py-2 ml-3"><img src="./images/icon-minus.svg"></span>
+							<span contenteditable class="item-count py-2">0</span>
+							<span class="plus mr-3 py-2"><img src="./images/icon-plus.svg"></span>
+						</div>
+						<div data-productid="100" data-productimg="images/image-product-1.jpg" data-product="Fall	limited edition sneakers" data-price="125" class="add-to-cart rounded-2 text-white fw-700 mx-auto row align-center
+						btn-primary justify-center
+						call-to-action mt-1 col-xs-12 col-md-6"><span class="px-1
+						text-center"><img class="w-70" src="images/icon-cart.svg"></span><span class="text-center px-1"> &nbsp; Add to cart</span></div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</section>
+	
+	<section hidden id="lightbox">
+		<main class="row justify-center align-center h-100 h-100">
+			<div class="container-full mx-auto">
+				
+				<div class="product-con mx-auto mt-4 col-md-6">
+					
+					<div class="mb-5 row  carousel-container">
+						<div class="container-full p-1 mb-1 row justify-end align-center">
+							<div class="w-5 close-icon"><img src="./images/icon-close.svg"></div>
+						</div>
+						<div class="carousel rounded-3 col-md-12 mb-3">
+							<div class="controls  py-3">
+								<div class="bg-hover-primary control-prev rounded-circle bg-white"><img class="w-20" src="images/icon-previous.svg">
+								</div>
+								<div class="bg-hover-primary control-next rounded-circle bg-white"><img class="w-20"	src="images/icon-next.svg">
+								</div>
+							</div>
+							<div class="slides">
+								<div class="slide rounded-3"><img class="rounded-3" src="images/image-product-1.jpg"></div>
+								<div class="slide rounded-3"><img class="rounded-3" src="images/image-product-2.jpg"></div>
+								<div class="slide rounded"><img class="rounded-3" src="images/image-product-3.jpg"></div>
+								<div class="slide rounded-3"><img class="rounded-3" src="images/image-product-4.jpg"></div>
+							</div>
+							
+						</div>
+						
+						<div class="thumbnails col-md-12">
+							<div data-src="/images/image-product-1.jpg" class="thumbnail active-thumbnail rounded-3"><img class="rounded-3"	src="images/image-product-1-thumbnail.jpg">
+							</div>
+							<div data-src="/images/image-product-2.jpg" class="thumbnail
+						rounded-3"><img class="rounded-3" src="images/image-product-2-thumbnail.jpg"></div>
+							<div data-src="/images/image-product-3.jpg" class="thumbnail rounded-3"><img class="rounded-3" src="images/image-product-3-thumbnail.jpg">
+							</div>
+							<div data-src="/images/image-product-4.jpg" class="thumbnail rounded-3"><img class="rounded-3" src="images/image-product-4-thumbnail.jpg">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+		</main>
+	</section>
+	
+	<footer class="my-5 font-sm">
+		<div class="attribution w-80 mx-auto my-5 text-center">
+			<div>Challenge by <a href="https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6" target="_blank" title="Frontend Mentor website">Frontend Mentor</a></div>
+			<div>Coded by <a href="https://github.com/jscriptural" target="_blank" title="github">JScriptural</a></div>
+			<div class="year">2023</div>
+		</div>
+	</footer>
+	<script src="./js/index.js" type="module"></script>
+	<script src="./js/lightbox.js" type="module"></script>
+</body>
+
+</html>

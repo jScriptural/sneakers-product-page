@@ -1,0 +1,44 @@
+.animation-slide-in-right {
+	animation: slide-in-right .5s ease forwards;
+}
+.animation-slide-out-left {
+	animation: slide-out-left .5s ease forwards;
+}
+.animation-grow {
+	animation: grow .3s ease forwards;
+}
+.animation-shrink {
+	animation: shrink .3s ease forwards;
+}
+@keyframes slide-in-right{
+	from {
+		transform: translateX(-100vw);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+@keyframes slide-out-left {
+	from{
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100vw);
+	}
+}
+@keyframes grow {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+@keyframes shrink {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(0);
+	}
+}

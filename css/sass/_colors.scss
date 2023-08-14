@@ -1,0 +1,21 @@
+
+$colors: (
+"primary": $primary,
+"secondary": $secondary,
+"dark-blue": $dark-blue,
+"grayish-blue": $grayish-blue,
+"dark-grayish-blue": $dark-grayish-blue,
+"light-grayish-blue": $light-grayish-blue,
+"white": $white,
+"black": $black,
+"light":$light,
+);
+
+@each $key, $color in $colors {
+	.text-#{$key} {
+		color: $color;
+	}
+	.bg-#{$key} {
+		background-color: $color;
+	}
+}

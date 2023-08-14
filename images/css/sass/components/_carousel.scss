@@ -1,0 +1,91 @@
+@use "sass:map";
+
+
+
+
+.carousel-container {
+	@extend .container;
+	
+	.carousel {
+		overflow: hidden;
+		position: relative;
+		/*	display: flex;*/
+		.controls {
+			position: absolute;
+			z-index: 6000;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			top: 45%;
+			//padding: 5px 15px;
+			&[d-md-none]{
+				@include md {
+					display: none;
+				}
+			}
+			.control-prev,
+			.control-next {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 35px;
+				width: 35px;
+			}
+			
+		}
+		
+		.slides {
+			//	overflow: hidden;
+			display: flex;
+			transition: transform .3s;
+			
+			.slide {
+				padding-right: 5px;
+				flex: 0 0 100%;
+			}
+		}
+		
+		
+	}
+	
+	.thumbnails {
+		display: none;
+		
+		&>* {
+			padding: 4px;
+		}
+		
+		.thumbnail {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: .5rem;
+
+			&:hover {
+				opacity: .4;
+			}
+		}
+		
+		@include md {
+			& {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+			}
+			
+		}
+		
+	}
+	
+	
+}
+
+
+
+.active-thumbnail {
+	background-color: $primary;
+	opacity: .6;
+}
+

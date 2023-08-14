@@ -1,0 +1,335 @@
+@use "sass:map";
+
+$utilities: (
+	"margin": (
+	 "prefix": "m",
+	 "values": (
+	 	"0": 0,
+	 	"1": $base-margin,
+	 	"2": $base-margin * 1.5,
+	 	"3": $base-margin * 2,
+	 	"4": $base-margin * 2.5,
+	 	"5": $base-margin * 3,
+	 	"auto": "auto",
+	 )
+	 ),
+ "margin-left": (
+ 	 "prefix": "ml",
+ 	 "values": (
+	 	"0": 0,
+	 	"1": $base-margin,
+	 	"2": $base-margin * 1.5,
+	 	"3": $base-margin * 2,
+	 	"4": $base-margin * 2.5,
+	 	"5": $base-margin * 3,
+	 	"auto": "auto",
+ 	 )
+ ),
+"margin-right": (
+  "prefix": "mr",
+  "values": (
+	 	"0": 0,
+	 	"1": $base-margin,
+	 	"2": $base-margin * 1.5,
+	 	"3": $base-margin * 2,
+	 	"4": $base-margin * 2.5,
+	 	"5": $base-margin * 3,
+	 	"auto": "auto",
+  )
+),
+"margin-bottom": (
+ "prefix": "mb",
+  "values": (
+	 	"0": 0,
+	 	"1": $base-margin,
+	 	"2": $base-margin * 1.5,
+	 	"3": $base-margin * 2,
+	 	"4": $base-margin * 2.5,
+	 	"5": $base-margin * 3,
+	 	"auto": "auto",
+  )
+),
+"margin-top": (
+ "prefix": "mt",
+  "values": (
+	 	"0": 0,
+	 	"1": $base-margin,
+	 	"2": $base-margin * 1.5,
+	 	"3": $base-margin * 2,
+	 	"4": $base-margin * 2.5,
+	 	"5": $base-margin * 3,
+	 	"auto": "auto",
+  )
+),
+
+"padding": (
+	"prefix": "p",
+	"values": (
+	"0": 0,
+	"1": $base-padding,
+	"2": $base-padding * 1.5,
+	"3": $base-padding * 2,
+	"4": $base-padding * 2.5,
+	"5": $base-padding * 3,
+	 "auto": "auto",
+	  )
+	),
+"padding-left": (
+	"prefix": "pl",
+	"values": (
+	"0": 0,
+	"1": $base-padding,
+	"2": $base-padding * 1.5,
+	"3": $base-padding * 2,
+	"4": $base-padding * 2.5,
+	"5": $base-padding * 3,
+	"auto": "auto",
+	 )
+	),
+"padding-right": (
+	"prefix": "pr",
+	"values": (
+	"0": 0,
+	"1": $base-padding,
+	"2": $base-padding * 1.5,
+	"3": $base-padding * 2,
+	"4": $base-padding * 2.5,
+	"5": $base-padding * 3,
+	"auto": "auto",
+	)
+	),
+"padding-top": (
+	"prefix": "pt",
+	"values": (
+	"0": 0,
+	"1": $base-padding,
+	"2": $base-padding * 1.5,
+	"3": $base-padding * 2,
+	"4": $base-padding * 2.5,
+	"5": $base-padding * 3,
+	"auto": "auto",
+	)
+),
+"padding-bottom": (
+  "prefix": "pb",
+  "values": (
+	"0": 0,
+	"1": $base-padding,
+	"2": $base-padding * 1.5,
+	"3": $base-padding * 2,
+	"4": $base-padding * 2.5,
+	"5": $base-padding * 3,
+	"auto": "auto",
+  )
+),
+"font-weight": (
+"prefix": "fw",
+"values": (
+ "light": 100,
+ "100": 200,
+ "200": 100,
+ "300": 300,
+ "400": 400,
+ "500": 500,
+ "600": 600,
+ "700": 700,
+ "800": 800,
+ "900": 900,
+ "bold":900,
+),
+),
+);
+
+@each $prop, $map in $utilities {
+	$prefix: map.get($map,"prefix");
+	@each $key, $val in map.get($map, "values"){
+		@if ($key == "default"){
+			.#{prefix} {
+				#{$prop}: #{$val};
+			}
+		}@else{
+		.#{$prefix}-#{$key} {
+			#{$prop}: #{$val};
+		}
+		}
+	}
+}
+
+
+$directional-margin-utilities: (
+"mx": (
+	 	"0": 0,
+	 	"1": $base-margin,
+	 	"2": $base-margin * 1.5,
+	 	"3": $base-margin * 2,
+	 	"4": $base-margin * 2.5,
+	 	"5": $base-margin * 3,
+	 	"auto": "auto",
+),
+"my": (
+	 	"0": 0,
+	 	"1": $base-margin,
+	 	"2": $base-margin * 1.5,
+	 	"3": $base-margin * 2,
+	 	"4": $base-margin * 2.5,
+	 	"5": $base-margin * 3,
+	 	"auto": "auto",
+),
+);
+
+@each $dir, $map in $directional-margin-utilities {
+	@each $key, $val in $map {
+		@if ($dir == "mx"){
+			.#{$dir}-#{$key} {
+				margin-left: #{$val};
+				margin-right: #{$val};
+			}
+		}@else {
+			.#{$dir}-#{$key} {
+				margin-top: #{$val};
+				margin-bottom: #{$val};
+			}
+		}
+	}
+}
+
+$directional-padding-utilities: (
+"px": (
+	 	"0": 0,
+	 	"1": $base-padding,
+	 	"2": $base-padding * 1.5,
+	 	"3": $base-padding * 2,
+	 	"4": $base-padding * 2.5,
+	 	"5": $base-padding * 3,
+	 	"auto": "auto",
+),
+"py": (
+	 	"0": 0,
+	 	"1": $base-padding,
+	 	"2": $base-padding * 1.5,
+	 	"3": $base-padding * 2,
+	 	"4": $base-padding * 2.5,
+	 	"5": $base-padding * 3,
+	 	"auto": "auto",
+),
+);
+
+@each $dir, $map in $directional-padding-utilities {
+	@each $key, $val in $map {
+		@if ($dir == "mx"){
+			.#{$dir}-#{$key} {
+				margin-left: #{$val};
+				margin-right: #{$val};
+			}
+		}@else {
+			.#{$dir}-#{$key} {
+				margin-top: #{$val};
+				margin-bottom: #{$val};
+			}
+		}
+	}
+}
+
+$text-align: (
+ "end": "right",
+ "start": "left",
+ "center": "center",
+ "justify": "justify",
+);
+
+@each $key, $val in $text-align {
+	.text-#{$key} {
+		text-align: #{$val};
+	}
+}
+
+$font-sizes: (
+"font-normal": $font-size,
+"font-xs": $font-size-xs,
+"font-sm": $font-size-sm,
+"font-md": $font-size-md,
+"font-lg": $font-size-lg,
+"font-xl": $font-size-xl,
+"font-xxl": $font-size-xxl,
+);
+
+@each $key,$val in $font-sizes {
+	.#{$key} {
+		font-size: $val;
+	}
+}
+
+$sizes: (
+"5": 5%,
+"10": 10%,
+"15": 15%,
+"20": 20%,
+"25": 25%,
+"30": 30%,
+ "35": 35%,
+ "40": 40%,
+ "45": 45%,
+"50": 50%,
+"55": 55%,
+"60": 60%,
+"65": 65%,
+"70": 70%,
+"75": 75%,
+"80": 80%,
+"85": 85%,
+"90": 90%,
+"95": 95%,
+"100": 100%,
+);
+@each $key,$val in $sizes {
+	.w-#{$key} {
+		width: $val;
+	}
+	.h-#{$key} {
+		height:$val;
+	}
+}
+.sticky-top-0 {
+	position: sticky;
+	top: 0;
+	z-index: 8000;
+}
+
+$borders: "border","border-top","border-left","border-right","border-bottom";
+@each $val in $borders {
+	.#{$val} {
+		#{$val}: 1.5px solid $light-grayish-blue;
+	}
+}
+
+
+$rounded: (
+ "0": 0,
+ "1": 5px,
+ "2": 10px,
+ "3": 15px,
+ "4": 20px,
+ "5": 25px,
+ "6": 30px,
+ "7": 35px,
+ "8": 40px,
+ "9": 45px,
+ "10": 50px,
+ "circle": 50%,
+);
+
+@each $key,$val in $rounded {
+		.rounded-#{$key} {
+			border-radius: $val;
+		}
+}
+
+
+@each $key, $val in $colors {
+	.bg-hover-#{$key} {
+		&:hover {
+			background: $val;
+		}
+	}
+	
+}
